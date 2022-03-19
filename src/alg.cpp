@@ -16,7 +16,7 @@ int Fbinsearch(int* arr, int len, int value) {
     } else {
         left = half_size;
         return Fbinsearch(&(arr[half_size + 1]), right - half_size, value);
-    } 
+    }
 }
 int countPairs1(int* arr, int len, int value) {
     int sum = 0;
@@ -43,12 +43,12 @@ int countPairs2(int* arr, int len, int value) {
     return sum;
 }
 int countPairs3(int* arr, int len, int value) {
-   int sum = 0, temp = 0;
-   for (int i = 0; i < len - 1; i++) {
+    int sum = 0, temp = 0;
+    for (int i = 0; i < len - 1; i++) {
        if (arr[i] > value / 2) {
            break;
        }
        sum += Fbinsearch(&(arr[i+1]), len-i-1, value-arr[i]);
-   }
-   return sum;
+    }
+    return sum;
 }
